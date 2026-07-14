@@ -1,4 +1,4 @@
-# 🇮🇳 BHARATMIND Backend
+#  BHARATMIND Backend
 ### India's AI Digital Twin & Decision Intelligence Platform
 
 > **BHARATMIND** is an AI-powered backend platform that enables intelligent decision-making through Digital Twin technology, multi-agent AI, predictive analytics, and government-focused simulation services.
