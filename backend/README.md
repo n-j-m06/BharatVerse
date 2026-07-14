@@ -1,7 +1,7 @@
-# ⚙️ BHARATMIND Backend
+# ⚙️ BHARATVERSE Backend
 ### India's AI Digital Twin & Decision Intelligence Platform
 
-> **BHARATMIND** is an AI-powered backend platform that enables intelligent decision-making through Digital Twin technology, multi-agent AI, predictive analytics, and government-focused simulation services.
+> **BHARATVERSE** is an AI-powered backend platform that enables intelligent decision-making through Digital Twin technology, multi-agent AI, predictive analytics, and government-focused simulation services.
 
 This repository contains the backend services built using **FastAPI**, powering the BHARATMIND platform with secure authentication, AI orchestration, digital twin APIs, analytics, disaster prediction, and real-time communication.
 
@@ -396,7 +396,7 @@ http://127.0.0.1:8000/redoc
 
 **Backend Development**
 
-- Team BharathVerse
+- Team BharatVerse
 
 ---
 
