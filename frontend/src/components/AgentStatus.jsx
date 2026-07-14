@@ -1,44 +1,66 @@
 export default function AgentStatus() {
+
   const agents = [
-    "Climate",
-    "Traffic",
-    "Economy",
-    "Energy",
-    "Sustainability",
+    {
+      name: "Climate AI",
+      status: "Running",
+    },
+    {
+      name: "Traffic AI",
+      status: "Running",
+    },
+    {
+      name: "Economy AI",
+      status: "Running",
+    },
+    {
+      name: "Energy AI",
+      status: "Idle",
+    },
+    {
+      name: "Disaster AI",
+      status: "Running",
+    },
   ];
 
   return (
-    <div style={styles.card}>
-      <h2>🤖 AI Agent Status</h2>
+    <div className="bg-slate-900 rounded-2xl border border-slate-700 p-6 shadow-xl">
 
-      {agents.map((agent) => (
-        <div key={agent} style={styles.row}>
-          <span>{agent}</span>
+      <h2 className="text-xl font-bold text-white mb-6">
+        🤖 AI Agent Status
+      </h2>
 
-          <span style={styles.green}>● Active</span>
-        </div>
-      ))}
+      <div className="space-y-5">
+
+        {agents.map((agent) => (
+
+          <div
+            key={agent.name}
+            className="flex justify-between items-center"
+          >
+
+            <div>
+
+              <p className="text-white font-medium">
+                {agent.name}
+              </p>
+
+              <p className="text-slate-400 text-sm">
+                Monitoring...
+              </p>
+
+            </div>
+
+            <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm">
+              {agent.status}
+            </span>
+
+          </div>
+
+        ))}
+
+      </div>
+
     </div>
   );
 }
-
-const styles = {
-  card: {
-    background: "white",
-    padding: "25px",
-    borderRadius: "15px",
-    width: "330px",
-    boxShadow: "0 5px 20px rgba(0,0,0,0.1)",
-  },
-
-  row: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginTop: "18px",
-  },
-
-  green: {
-    color: "green",
-    fontWeight: "bold",
-  },
-};

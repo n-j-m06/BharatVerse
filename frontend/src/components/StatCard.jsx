@@ -1,42 +1,45 @@
 import { motion } from "framer-motion";
 
-export default function StatCard({ title, value, subtitle, icon }) {
+export default function StatCard({
+  title,
+  value,
+  subtitle,
+  icon,
+}) {
   return (
     <motion.div
-      whileHover={{ scale: 1.04 }}
-      transition={{ duration: 0.2 }}
-      style={styles.card}
+      whileHover={{
+        y: -6,
+        scale: 1.02,
+      }}
+      transition={{
+        duration: 0.25,
+      }}
+      className="bg-slate-900 rounded-2xl p-6 border border-slate-700 shadow-xl hover:border-cyan-400 transition-all duration-300 w-72"
     >
-      <div style={styles.top}>
-        <span style={styles.icon}>{icon}</span>
+      <div className="flex justify-between items-center">
 
         <div>
-          <h3>{title}</h3>
-          <p>{subtitle}</p>
-        </div>
-      </div>
 
-      <h1>{value}</h1>
+          <p className="text-slate-400 text-sm">
+            {title}
+          </p>
+
+          <h2 className="text-4xl font-bold text-white mt-2">
+            {value}
+          </h2>
+
+          <p className="text-cyan-400 text-sm mt-3">
+            {subtitle}
+          </p>
+
+        </div>
+
+        <div className="w-16 h-16 rounded-2xl bg-cyan-500/20 flex items-center justify-center text-3xl">
+          {icon}
+        </div>
+
+      </div>
     </motion.div>
   );
 }
-
-const styles = {
-  card: {
-    background: "#ffffff",
-    borderRadius: "15px",
-    padding: "20px",
-    width: "250px",
-    boxShadow: "0 5px 20px rgba(0,0,0,0.1)",
-  },
-
-  top: {
-    display: "flex",
-    alignItems: "center",
-    gap: "15px",
-  },
-
-  icon: {
-    fontSize: "35px",
-  },
-};
