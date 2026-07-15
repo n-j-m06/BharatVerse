@@ -23,8 +23,8 @@ export default function Dashboard() {
 
             <div>
 
-              <h1 className="text-4xl font-bold">
-                🇮🇳 BharatVerse Command Center
+              <h1 className="text-4xl font-bold center">
+                BharatVerse Command Center
               </h1>
 
               <p className="text-slate-400 mt-2">
