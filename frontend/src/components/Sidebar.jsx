@@ -23,6 +23,14 @@ import {
   Wind,
   CloudOff,
   Mountain,
+
+  FileSearch,
+  Bell,
+  History,
+  Wifi,
+  Radio,
+  LoaderCircle,
+
 } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
 
@@ -161,10 +169,47 @@ export default function Sidebar() {
       path:"/earthquake-risk",
     },
     {
-      name: "Citizen Reports",
-      icon: <FileText size={20} />,
-      path: "/dashboard",
-    },
+  name: "Policy Analysis",
+  icon: <FileSearch size={20} />,
+  path: "/policy-analysis",
+},
+
+{
+  name: "Citizen Reports",
+  icon: <FileText size={20} />,
+  path: "/citizen-report",
+},
+
+{
+  name: "Notifications",
+  icon: <Bell size={20} />,
+  path: "/notifications",
+},
+
+{
+  name: "Simulation History",
+  icon: <History size={20} />,
+  path: "/simulation-history",
+},
+
+{
+  name: "Live AI",
+  icon: <Wifi size={20} />,
+  path: "/live-ai",
+},
+
+{
+  name: "Simulation Stream",
+  icon: <Radio size={20} />,
+  path: "/simulation-stream",
+},
+
+{
+  name: "Agent Progress",
+  icon: <LoaderCircle size={20} />,
+  path: "/agent-progress",
+},
+    
   ];
 
   return (

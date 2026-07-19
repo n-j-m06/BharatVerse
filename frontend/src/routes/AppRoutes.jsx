@@ -1,10 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import AgentProgress from "../pages/AgentProgress";
+import SimulationStream from "../pages/SimulationStream";
+import LiveAI from "../pages/LiveAI";
+import SimulationHistory from "../pages/SimulationHistory";
+import Notifications from "../pages/Notifications";
+import CitizenReport from "../pages/CitizenReport";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Dashboard from "../pages/Dashboard";
 import NotFound from "../pages/NotFound";
-
+import PolicyAnalysis from "../pages/PolicyAnalysis";
 import ProtectedRoute from "../components/ProtectedRoute";
 import Chat from "../pages/Chat";
 import Simulation from "../pages/Simulation";
@@ -267,6 +273,68 @@ export default function AppRoutes() {
           }
         />
 
+        <Route
+    path="/policy-analysis"
+    element={
+        <ProtectedRoute>
+            <PolicyAnalysis/>
+        </ProtectedRoute>
+    }
+/>
+
+<Route
+    path="/citizen-report"
+    element={
+        <ProtectedRoute>
+            <CitizenReport/>
+        </ProtectedRoute>
+    }
+/>
+
+<Route
+    path="/notifications"
+    element={
+        <ProtectedRoute>
+            <Notifications/>
+        </ProtectedRoute>
+    }
+/>
+
+<Route
+    path="/simulation-history"
+    element={
+        <ProtectedRoute>
+            <SimulationHistory/>
+        </ProtectedRoute>
+    }
+/>
+
+<Route
+    path="/live-ai"
+    element={
+        <ProtectedRoute>
+            <LiveAI/>
+        </ProtectedRoute>
+    }
+/>
+
+<Route
+path="/simulation-stream"
+element={
+<ProtectedRoute>
+<SimulationStream/>
+</ProtectedRoute>
+}
+/>
+
+<Route
+path="/agent-progress"
+element={
+<ProtectedRoute>
+<AgentProgress/>
+</ProtectedRoute>
+}
+/>
         <Route path="*" element={<NotFound />} />
 
       </Routes>
