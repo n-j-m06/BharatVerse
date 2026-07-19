@@ -10,10 +10,19 @@ import {
   LogOut,
   Cpu,
   Car,
+  CloudSun,
   CloudRain,
   Landmark,
   Zap,
   Brain,
+  Flame,
+  Layers3,
+  Activity,
+  Leaf,
+  Sun,
+  Wind,
+  CloudOff,
+  Mountain,
 } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
 
@@ -79,27 +88,77 @@ export default function Sidebar() {
     {
       name: "Digital Twin",
       icon: <Globe2 size={20} />,
-      path: "/dashboard",
+      path: "/digital-twin",
+    },
+    {
+        name:"Heatmap",
+        icon:<Flame size={20}/>,
+        path:"/heatmap"
+    },
+    {
+      name:"Weather",
+      icon:<CloudSun size={20}/>,
+      path:"/weather"
+    },
+    {
+      name:"Map Layers",
+      icon:<Layers3 size={20}/>,
+      path:"/map-layers"
     },
     {
       name: "Analytics",
       icon: <BarChart3 size={20} />,
-      path: "/dashboard",
+      path: "/analytics",
+    },
+    {
+      name: "National KPI",
+      icon: <Activity size={20} />,
+      path: "/national-kpi",
+    },
+    {
+      name:"SDG Dashboard",
+      icon:<Leaf size={20}/>,
+      path:"/sdg-dashboard",
     },
     {
       name: "Disaster",
       icon: <ShieldAlert size={20} />,
-      path: "/dashboard",
+      path: "/disaster",
     },
     {
       name: "Timeline",
       icon: <Clock3 size={20} />,
-      path: "/dashboard",
+      path: "/timeline",
     },
     {
       name: "Leaderboard",
       icon: <Trophy size={20} />,
-      path: "/dashboard",
+      path: "/leaderboard",
+    },
+    {
+      name: "Flood Risk",
+      icon: <CloudRain size={20} />,
+      path: "/flood-risk",
+    },
+    {
+      name: "Heatwave Risk",
+      icon: <Sun size={20} />,
+      path: "/heatwave-risk",
+    },
+    {
+      name: "Cyclone Risk",
+      icon: <Wind size={20} />,
+      path: "/cyclone-risk",
+    },
+    {
+      name:"Drought Risk",
+      icon:<CloudOff size={20}/>,
+      path:"/drought-risk",
+    },
+    {
+      name:"Earthquake Risk",
+      icon:<Mountain size={20}/>,
+      path:"/earthquake-risk",
     },
     {
       name: "Citizen Reports",
