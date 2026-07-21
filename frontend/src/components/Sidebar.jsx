@@ -213,7 +213,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="w-72 bg-slate-900 border-r border-slate-700 min-h-screen flex flex-col">
+    <aside className="w-56 h-[calc(100vh-80px)] sticky top-20 flex-shrink-0 bg-slate-900 border-r border-slate-700 flex flex-col">
 
       <div className="p-6 border-b border-slate-700">
 
@@ -227,14 +227,14 @@ export default function Sidebar() {
 
       </div>
 
-      <nav className="flex-1 p-4 space-y-2">
+      <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-1">
 
         {menu.map((item) => (
           <NavLink
             key={item.name}
             to={item.path}
             className={({ isActive }) =>
-              `flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 ${
+              `flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] transition-all duration-200 ${
                 isActive
                   ? "bg-cyan-500 text-white shadow-lg"
                   : "text-slate-300 hover:bg-slate-800 hover:text-cyan-400"

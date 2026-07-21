@@ -15,7 +15,7 @@ export default function StatCard({
       transition={{
         duration: 0.25,
       }}
-      className="bg-slate-900 rounded-2xl p-6 border border-slate-700 shadow-xl hover:border-cyan-400 transition-all duration-300 w-72"
+      className="w-full min-w-0 bg-slate-900 rounded-2xl p-5 border border-slate-700 shadow-xl hover:border-cyan-400 transition-all duration-300"
     >
       <div className="flex justify-between items-center">
 
@@ -25,7 +25,7 @@ export default function StatCard({
             {title}
           </p>
 
-          <h2 className="text-4xl font-bold text-white mt-2">
+          <h2 className="text-3xl font-bold text-white mt-2">
             {value}
           </h2>
 

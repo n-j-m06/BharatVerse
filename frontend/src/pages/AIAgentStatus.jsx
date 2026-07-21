@@ -115,7 +115,7 @@ export default function AIAgentStatus() {
 
           {/* Agent Cards */}
 
-          <div className="space-y-6">
+          <div className="space-y-2">
 
             {agents.map((agent)=>(
 
@@ -198,7 +198,7 @@ function Summary({title,value}){
 
   return(
 
-    <div className="bg-slate-900 rounded-2xl border border-slate-700 p-6">
+    <div className="bg-slate-900 rounded-2xl border border-slate-700 p-4 h-[260px] overflow-y-auto">
 
       <p className="text-slate-400">{title}</p>
 

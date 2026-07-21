@@ -15,7 +15,9 @@ export default function Dashboard() {
 
         <Sidebar />
 
-        <main className="flex-1 p-8">
+        <main className="flex-1 overflow-y-auto">
+
+        <div className="max-w-[1600px] mx-auto px-8 xl:px-10 py-8">
 
           {/* Hero Section */}
 
@@ -23,11 +25,11 @@ export default function Dashboard() {
 
             <div>
 
-              <h1 className="text-4xl font-bold center">
+              <h1 className="text-4xl font-extrabold tracking-tight">
                 BharatVerse Command Center
               </h1>
 
-              <p className="text-slate-400 mt-2">
+              <p className="text-slate-400 text-lg mt-3">
                 AI Powered National Digital Twin & Decision Intelligence Platform
               </p>
 
@@ -41,7 +43,7 @@ export default function Dashboard() {
 
           {/* KPI Cards */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
 
             <StatCard
               title="AI Agents"
@@ -75,55 +77,47 @@ export default function Dashboard() {
 
           {/* Main Grid */}
 
-          <div className="grid grid-cols-12 gap-6 mt-8">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 mt-10">
 
-            <div className="mt-8">
-                <AnalyticsChart/>
-            </div>
+          {/* Left Column */}
+          <div className="xl:col-span-3 space-y-6">
 
-            {/* Left */}
+            <AnalyticsChart />
 
-            <div className="col-span-12 xl:col-span-8">
+            <AgentStatus />
 
-              <MapPlaceholder />
+            <div className="bg-slate-900 rounded-2xl border border-slate-700 p-6">
 
-            </div>
+              <h2 className="text-xl font-bold mb-4">
+                🌤 Weather
+              </h2>
 
-            {/* Right */}
+              <p>📍 Chennai</p>
 
-            <div className="col-span-12 xl:col-span-4 space-y-6">
+              <h1 className="text-5xl font-bold mt-2">
+                31°
+              </h1>
 
-              <AgentStatus />
-
-              <div className="bg-slate-900 rounded-2xl border border-slate-700 p-6">
-
-                <h2 className="text-xl font-bold mb-4">
-                  🌤 Weather
-                </h2>
-
-                <div className="space-y-2">
-
-                  <p>📍 Chennai</p>
-
-                  <h1 className="text-5xl font-bold">
-                    31°
-                  </h1>
-
-                  <p className="text-slate-400">
-                    Sunny • Humidity 64%
-                  </p>
-
-                </div>
-
-              </div>
+              <p className="text-slate-400 mt-2">
+                Sunny • Humidity 64%
+              </p>
 
             </div>
 
           </div>
 
+          {/* Right Column */}
+          <div className="xl:col-span-9">
+
+              <MapPlaceholder />
+
+          </div>
+
+        </div>
+
           {/* Bottom Section */}
 
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-8">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mt-8">
 
             <div className="bg-slate-900 border border-slate-700 rounded-2xl p-6">
 
@@ -206,6 +200,8 @@ export default function Dashboard() {
             </div>
 
           </div>
+
+        </div>  
 
         </main>
 

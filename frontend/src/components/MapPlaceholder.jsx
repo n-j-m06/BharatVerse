@@ -11,9 +11,9 @@ export default function MapPlaceholder() {
 
     return (
 
-        <div className="bg-slate-900 rounded-2xl border border-slate-700 h-[520px] p-6">
+        <div className="bg-slate-900 rounded-2xl border border-slate-700 p-5 h-[300px] flex flex-col">
 
-            <div className="flex justify-between">
+            <div className="flex items-center justify-between gap-4 flex-wrap">
 
                 <div>
 
@@ -27,19 +27,19 @@ export default function MapPlaceholder() {
 
                 </div>
 
-                <button className="bg-cyan-500 px-4 py-2 rounded-xl">
+                <button className="bg-cyan-500 hover:bg-cyan-600 transition px-4 py-2 rounded-xl whitespace-nowrap">
                     Open Map
                 </button>
 
             </div>
 
-            <div className="mt-10 flex justify-center">
+            <div className="flex-1 mt-5 flex justify-center items-center">
 
-                <div className="w-[90%] h-[330px] rounded-xl bg-slate-800 border border-dashed border-cyan-500 flex items-center justify-center">
+                <div className="w-full h-full max-h-[280px] rounded-xl bg-slate-800 border border-dashed border-cyan-500 flex items-center justify-center">
 
                     <div>
 
-                        <div className="text-7xl text-center">
+                        <div className="text-8xl text-center">
                             🗺️
                         </div>
 
@@ -53,7 +53,7 @@ export default function MapPlaceholder() {
 
             </div>
 
-            <div className="flex justify-between mt-8">
+            <div className="flex justify-between mt-4 text-sm flex-wrap gap-2">
 
                 {cities.map(city=>(
                     <span
