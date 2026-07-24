@@ -7,7 +7,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-export default function SimulationResults() {
+export default function SimulationResults({ result }) {
 
   const results = [
     {
@@ -84,6 +84,40 @@ export default function SimulationResults() {
 
       </div>
 
+      {/* Backend Result */}
+
+      {result && (
+        <div className="bg-green-500/10 border border-green-500 rounded-xl p-5 mb-6">
+
+          <h3 className="text-xl font-bold text-green-400">
+            Backend Simulation Result
+          </h3>
+
+          <div className="mt-4 space-y-2">
+
+            <p>
+              <strong>City:</strong> {result.city}
+            </p>
+
+            <p>
+              <strong>Scenario:</strong> {result.scenario}
+            </p>
+
+            <p>
+              <strong>Status:</strong> {result.status}
+            </p>
+
+            <p>
+              <strong>Summary:</strong> {result.summary}
+            </p>
+
+          </div>
+
+        </div>
+      )}
+
+      {/* Static Cards */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
 
         {results.map((item) => (
@@ -126,6 +160,8 @@ export default function SimulationResults() {
         ))}
 
       </div>
+
+      {/* Recommendation */}
 
       <div className="mt-8 border-t border-slate-700 pt-6">
 

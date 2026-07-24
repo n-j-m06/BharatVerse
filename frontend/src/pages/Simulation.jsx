@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import { runSimulation } from "../services/simulationService";
 
 import { useState } from "react";
 
@@ -10,6 +11,7 @@ import SimulationResults from "../components/simulation/SimulationResults";
 import SimulationSummary from "../components/simulation/SimulationSummary";
 
 export default function Simulation() {
+  const [result, setResult] = useState(null);
 
   const [city, setCity] = useState("Chennai");
   const [scenario, setScenario] = useState("Flood");
@@ -46,7 +48,11 @@ export default function Simulation() {
 
           <div className="mt-6">
 
-            <SimulationControls />
+            <SimulationControls
+  city={city}
+  scenario={scenario}
+  setResult={setResult}
+/>
 
           </div>
 
@@ -60,7 +66,9 @@ export default function Simulation() {
 
           <div className="mt-6">
 
-            <SimulationResults />
+            <SimulationResults
+  result={result}
+/>
 
           </div>
 

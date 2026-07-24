@@ -4,8 +4,19 @@ import StatCard from "../components/StatCard";
 import AgentStatus from "../components/AgentStatus";
 import MapPlaceholder from "../components/MapPlaceholder";
 import AnalyticsChart from "../components/AnalyticsChart";
+import { useEffect, useState } from "react";
+import { getDashboard } from "../services/dashboardService";
+
 
 export default function Dashboard() {
+
+  const [dashboard, setDashboard] = useState({});
+useEffect(() => {
+    getDashboard()
+        .then((data) => setDashboard(data))
+        .catch(console.error);
+}, []);
+
   return (
     <div className="bg-slate-950 min-h-screen text-white">
 

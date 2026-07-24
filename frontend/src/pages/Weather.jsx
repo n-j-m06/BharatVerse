@@ -1,5 +1,8 @@
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import { useEffect, useState } from "react";
+import { getWeather } from "../services/weatherService";
+
 
 import {
   CloudSun,
@@ -12,6 +15,13 @@ import {
 } from "lucide-react";
 
 export default function Weather() {
+  const [weather, setWeather] = useState({});
+
+useEffect(() => {
+  getWeather()
+    .then((data) => setWeather(data))
+    .catch(console.error);
+}, []);
 
   const cities = [
     {
@@ -41,31 +51,31 @@ export default function Weather() {
   ];
 
   const stats = [
-    {
-      title:"Temperature",
-      value:"31°C",
-      icon:<Thermometer size={30}/>,
-      color:"text-red-400"
-    },
-    {
-      title:"Humidity",
-      value:"68%",
-      icon:<Droplets size={30}/>,
-      color:"text-blue-400"
-    },
-    {
-      title:"Wind Speed",
-      value:"18 km/h",
-      icon:<Wind size={30}/>,
-      color:"text-cyan-400"
-    },
-    {
-      title:"AQI",
-      value:"72",
-      icon:<CloudSun size={30}/>,
-      color:"text-green-400"
-    }
-  ];
+  {
+    title: "Temperature",
+    value: `${weather.temperature ?? "--"}°C`,
+    icon: <Thermometer size={30} />,
+    color: "text-red-400",
+  },
+  {
+    title: "Humidity",
+    value: `${weather.humidity ?? "--"}%`,
+    icon: <Droplets size={30} />,
+    color: "text-blue-400",
+  },
+  {
+    title: "Wind Speed",
+    value: `${weather.wind_speed ?? "--"} km/h`,
+    icon: <Wind size={30} />,
+    color: "text-cyan-400",
+  },
+  {
+    title: "Rain Probability",
+    value: `${weather.rain_probability ?? "--"}%`,
+    icon: <CloudRain size={30} />,
+    color: "text-green-400",
+  },
+];
 
   return(
 

@@ -7,7 +7,13 @@ import {
   Settings,
 } from "lucide-react";
 
-export default function SimulationControls() {
+import { runSimulation } from "../../services/simulationService";
+
+export default function SimulationControls({
+  city,
+  scenario,
+  setResult,
+}) {
 
   const controls = [
     {
@@ -42,7 +48,30 @@ export default function SimulationControls() {
     },
   ];
 
+  const handleClick = async (control) => {
+
+    if (control.title !== "Start") return;
+
+    try {
+
+      const data = await runSimulation(city, scenario);
+
+      setResult(data);
+
+      alert("Simulation Completed");
+
+    } catch (err) {
+
+      console.error(err);
+
+      alert("Simulation Failed");
+
+    }
+
+  };
+
   return (
+
     <div className="bg-slate-900 border border-slate-700 rounded-2xl p-6">
 
       <div className="flex items-center justify-between mb-6">
@@ -71,13 +100,16 @@ export default function SimulationControls() {
 
           <button
             key={control.title}
+            onClick={() => handleClick(control)}
             className={`${control.color} rounded-xl p-5 flex flex-col items-center gap-3 transition-all duration-300 shadow-lg`}
           >
 
             {control.icon}
 
             <span className="font-medium">
+
               {control.title}
+
             </span>
 
           </button>
@@ -91,11 +123,15 @@ export default function SimulationControls() {
         <div className="bg-slate-800 rounded-xl p-4 text-center">
 
           <p className="text-slate-400 text-sm">
+
             Simulation Status
+
           </p>
 
           <h3 className="text-xl font-bold text-green-400 mt-2">
+
             Ready
+
           </h3>
 
         </div>
@@ -103,11 +139,15 @@ export default function SimulationControls() {
         <div className="bg-slate-800 rounded-xl p-4 text-center">
 
           <p className="text-slate-400 text-sm">
+
             Active Agents
+
           </p>
 
           <h3 className="text-xl font-bold text-cyan-400 mt-2">
+
             4
+
           </h3>
 
         </div>
@@ -115,11 +155,15 @@ export default function SimulationControls() {
         <div className="bg-slate-800 rounded-xl p-4 text-center">
 
           <p className="text-slate-400 text-sm">
+
             Scenario
+
           </p>
 
           <h3 className="text-xl font-bold text-orange-400 mt-2">
-            Flood
+
+            {scenario}
+
           </h3>
 
         </div>
@@ -127,11 +171,15 @@ export default function SimulationControls() {
         <div className="bg-slate-800 rounded-xl p-4 text-center">
 
           <p className="text-slate-400 text-sm">
+
             Estimated Time
+
           </p>
 
           <h3 className="text-xl font-bold text-purple-400 mt-2">
+
             24 min
+
           </h3>
 
         </div>
@@ -139,6 +187,7 @@ export default function SimulationControls() {
       </div>
 
     </div>
+
   );
 
 }

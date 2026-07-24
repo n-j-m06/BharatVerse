@@ -4,48 +4,18 @@ import {
   Info,
   Bell,
 } from "lucide-react";
-
+import { useEffect, useState } from "react";
+import { getNotifications } from "../../services/notificationService";
 export default function NotificationList() {
 
-  const notifications = [
+  const [notifications, setNotifications] = useState([]);
 
-    {
-      title: "Flood Risk Increased in Chennai",
-      message: "Climate AI detected heavy rainfall in the next 6 hours.",
-      type: "Critical",
-      icon: <AlertTriangle size={22}/>,
-      color: "bg-red-500/20 text-red-400",
-      time: "2 mins ago",
-    },
-
-    {
-      title: "Traffic Prediction Updated",
-      message: "Traffic AI optimized signal timing across 12 junctions.",
-      type: "Information",
-      icon: <Info size={22}/>,
-      color: "bg-cyan-500/20 text-cyan-400",
-      time: "10 mins ago",
-    },
-
-    {
-      title: "Simulation Completed",
-      message: "Flood simulation finished successfully with 96% accuracy.",
-      type: "Success",
-      icon: <CheckCircle2 size={22}/>,
-      color: "bg-green-500/20 text-green-400",
-      time: "25 mins ago",
-    },
-
-    {
-      title: "Energy Consumption Warning",
-      message: "Energy AI predicts peak demand between 6 PM and 9 PM.",
-      type: "Warning",
-      icon: <Bell size={22}/>,
-      color: "bg-yellow-500/20 text-yellow-400",
-      time: "40 mins ago",
-    },
-
-  ];
+useEffect(() => {
+  getNotifications()
+    .then((data) => setNotifications(data.notifications))
+    .catch(console.error);
+}, []);
+  
 
   return (
 
@@ -70,11 +40,9 @@ export default function NotificationList() {
 
               <div className="flex gap-4">
 
-                <div className={item.color + " p-3 rounded-xl"}>
-
-                  {item.icon}
-
-                </div>
+                <div className="bg-cyan-500/20 p-3 rounded-xl">
+  <Bell size={22} className="text-cyan-400" />
+</div>
 
                 <div>
 
@@ -85,10 +53,8 @@ export default function NotificationList() {
                   </h3>
 
                   <p className="text-slate-400 mt-2">
-
-                    {item.message}
-
-                  </p>
+  AI Generated Notification
+</p>
 
                 </div>
 
@@ -98,13 +64,13 @@ export default function NotificationList() {
 
                 <span className={`${item.color} px-3 py-1 rounded-full text-sm`}>
 
-                  {item.type}
+                  {item.priority}
 
                 </span>
 
                 <p className="text-slate-500 text-sm mt-3">
 
-                  {item.time}
+                  Live
 
                 </p>
 
