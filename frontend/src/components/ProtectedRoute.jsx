@@ -1,15 +1,10 @@
-import { Navigate } from "react-router-dom";
+import PageLayout from "./PageLayout";
+import { LayoutProvider } from "./LayoutContext";
 
 export default function ProtectedRoute({ children }) {
-  return children;
+  return (
+    <LayoutProvider>
+      <PageLayout>{children}</PageLayout>
+    </LayoutProvider>
+  );
 }
-
-//export default function ProtectedRoute({ children }) {
-//  const token = localStorage.getItem("token");
-
- // if (!token) {
-   // return <Navigate to="/login" replace />;
-  //}
-
-  //return children;
-//}

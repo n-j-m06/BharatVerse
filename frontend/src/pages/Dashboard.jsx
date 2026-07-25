@@ -32,15 +32,15 @@ useEffect(() => {
 
           {/* Hero Section */}
 
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-8 mb-12">
 
-            <div>
+            <div className="space-y-3">
 
-              <h1 className="text-4xl font-extrabold tracking-tight">
+              <h1 className="text-4xl xl:text-5xl font-extrabold tracking-tight leading-tight">
                 BharatVerse Command Center
               </h1>
 
-              <p className="text-slate-400 text-lg mt-3">
+              <p className="text-slate-400 text-lg max-w-3xl leading-8">
                 AI Powered National Digital Twin & Decision Intelligence Platform
               </p>
 
@@ -113,6 +113,25 @@ useEffect(() => {
                 Sunny • Humidity 64%
               </p>
 
+              <div className="mt-5 space-y-2 text-sm text-slate-300">
+
+                <div className="flex justify-between">
+                    <span>Wind</span>
+                    <span>11 km/h</span>
+                </div>
+
+                <div className="flex justify-between">
+                    <span>Visibility</span>
+                    <span>10 km</span>
+                </div>
+
+                <div className="flex justify-between">
+                    <span>AQI</span>
+                    <span className="text-green-400">Good</span>
+                </div>
+
+            </div>
+
             </div>
 
           </div>
@@ -138,13 +157,13 @@ useEffect(() => {
 
               <div className="space-y-3 text-slate-300">
 
-                <p>• Flood warning generated</p>
+                <p>🔴 Flood warning generated</p>
 
-                <p>• Traffic AI updated predictions</p>
+                <p>🟢 Traffic AI updated predictions</p>
 
-                <p>• Weather synced successfully</p>
+                <p>🔵 Weather synced successfully</p>
 
-                <p>• Simulation completed</p>
+                <p>🟡 Simulation completed</p>
 
               </div>
 
@@ -190,19 +209,19 @@ useEffect(() => {
 
               <div className="grid grid-cols-2 gap-3">
 
-                <button className="bg-cyan-500 rounded-xl p-3 hover:bg-cyan-600 transition">
+                <button className="bg-cyan-500 rounded-xl py-3 font-medium shadow-lg hover:scale-[1.03] hover:shadow-cyan-500/20 transition-all duration-200">
                   Simulation
                 </button>
 
-                <button className="bg-indigo-500 rounded-xl p-3 hover:bg-indigo-600 transition">
+                <button className="bg-indigo-500 rounded-xl py-3 font-medium shadow-lg hover:scale-[1.03] hover:shadow-indigo-500/20 transition-all duration-200">
                   AI Chat
                 </button>
 
-                <button className="bg-emerald-500 rounded-xl p-3 hover:bg-emerald-600 transition">
+                <button className="bg-emerald-500 rounded-xl py-3 font-medium shadow-lg hover:scale-[1.03] hover:shadow-emerald-500/20 transition-all duration-200">
                   Analytics
                 </button>
 
-                <button className="bg-orange-500 rounded-xl p-3 hover:bg-orange-600 transition">
+                <button className="bg-orange-500 rounded-xl py-3 font-medium shadow-lg hover:scale-[1.03] hover:shadow-orange-500/20 transition-all duration-200">
                   Reports
                 </button>
 

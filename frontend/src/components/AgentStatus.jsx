@@ -24,7 +24,7 @@ export default function AgentStatus() {
   ];
 
   return (
-    <div className="bg-slate-900 rounded-2xl border border-slate-700 p-4 shadow-xl">
+    <div className="bg-slate-900 rounded-2xl border border-slate-700 p-6 shadow-lg">
 
       <h2 className="text-xl font-bold text-white mb-4">
         🤖 AI Agent Status
@@ -36,7 +36,7 @@ export default function AgentStatus() {
 
           <div
             key={agent.name}
-            className="flex justify-between items-center"
+            className="flex justify-between items-center py-2 border-b border-slate-800 last:border-none"
           >
 
             <div>

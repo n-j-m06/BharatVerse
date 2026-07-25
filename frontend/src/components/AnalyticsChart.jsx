@@ -20,9 +20,9 @@ const data = [
 
 export default function AnalyticsChart() {
   return (
-    <div className="bg-slate-900 border border-slate-700 rounded-2xl p-5 h-[280px] w-full">
+    <div className="bg-slate-900 border border-slate-700 rounded-2xl p-6 h-[350px] w-full shadow-lg">
 
-      <h2 className="text-xl font-semibold text-white mb-6">
+      <h2 className="text-xl font-bold text-white mb-8">
         Citizen Reports Trend
       </h2>
 

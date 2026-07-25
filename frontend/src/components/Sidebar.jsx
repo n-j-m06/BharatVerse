@@ -23,24 +23,28 @@ import {
   Wind,
   CloudOff,
   Mountain,
-
   FileSearch,
   Bell,
   History,
   Wifi,
   Radio,
   LoaderCircle,
-
 } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useLayoutShell } from "./LayoutContext";
 
-export default function Sidebar() {
+export default function Sidebar({ asShell = false }) {
   const navigate = useNavigate();
+  const { isShellActive } = useLayoutShell();
 
   const logout = () => {
     localStorage.clear();
     navigate("/login");
   };
+
+  if (!asShell && isShellActive) {
+    return null;
+  }
 
   const menu = [
     {
@@ -213,15 +217,14 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="w-56 h-[calc(100vh-80px)] sticky top-20 flex-shrink-0 bg-slate-900 border-r border-slate-700 flex flex-col">
-
+    <aside className="w-56 h-[calc(100vh-80px)] sticky top-20 flex-shrink-0 bg-slate-900 border-r border-slate-700 flex flex-col overflow-y-auto overflow-x-hidden">
       <div className="p-6 border-b border-slate-700">
 
-        <h2 className="text-cyan-400 text-xl font-bold">
+        <h2 className="text-cyan-400 text-2xl font-extrabold tracking-tight">
           BharatVerse
         </h2>
 
-        <p className="text-slate-400 text-sm mt-1">
+        <p className="text-slate-400 text-sm mt-2 leading-6">
           National AI Platform
         </p>
 

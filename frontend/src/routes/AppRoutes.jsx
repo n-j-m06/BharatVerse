@@ -42,7 +42,14 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
 
-        <Route path="/" element={<Dashboard />} />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
 
         <Route path="/signup" element={<Signup />} />
 
