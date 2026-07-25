@@ -1,14 +1,9 @@
+import google.generativeai as genai
 import os
-from dotenv import load_dotenv
-from google import genai
 
-load_dotenv()
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
-
-MODEL = "gemini-2.0-flash"
+MODEL = genai.GenerativeModel("gemini-2.0-flash")
 
 def ask_gemini(prompt):
 
