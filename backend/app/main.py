@@ -20,22 +20,37 @@ from app.api.leaderboard import router as leaderboard_router
 from app.api.layers import router as layers_router
 from app.api.ws import router as ws_router
 from app.api.disaster import router as disaster_router
+
+from app.database.database import engine
+from app.database.models import Base
+
 app = FastAPI(
-    title="BHARATMIND API",
-    version="1.0",
+    title="BHARATVERSE API",
+    version="1.0.0",
     swagger_ui_parameters={
         "persistAuthorization": True
     }
 )
 
+# -----------------------------
+# CORS Configuration
+# -----------------------------
+origins = [
+    "http://localhost:5173",  # Local development
+    "https://bharatverse.vercel.app",  # Replace with your actual Vercel URL after deployment
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# -----------------------------
+# API Routes
+# -----------------------------
 app.include_router(auth_router)
 app.include_router(simulation_router)
 app.include_router(dashboard_router)
@@ -55,12 +70,20 @@ app.include_router(leaderboard_router)
 app.include_router(layers_router)
 app.include_router(ws_router)
 app.include_router(disaster_router)
+
+# -----------------------------
+# Root Endpoint
+# -----------------------------
 @app.get("/")
 def home():
     return {
-        "message": "BHARATMIND Backend Running 🚀"
+        "message": "BharatVerse Backend Running 🚀",
+        "status": "online",
+        "docs": "/docs",
+        "version": "1.0.0"
     }
-from app.database.database import engine
-from app.database.models import Base
 
+# -----------------------------
+# Create Database Tables
+# -----------------------------
 Base.metadata.create_all(bind=engine)
