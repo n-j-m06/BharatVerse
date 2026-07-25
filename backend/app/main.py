@@ -36,8 +36,8 @@ app = FastAPI(
 # CORS Configuration
 # -----------------------------
 origins = [
-    "http://localhost:5173",  # Local development
-    "https://bharatverse.vercel.app",  # Replace with your actual Vercel URL after deployment
+    "http://localhost:5173",
+    "https://bharat-verse-puce.vercel.app",
 ]
 
 app.add_middleware(
